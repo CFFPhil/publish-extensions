@@ -207,6 +207,7 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
 
         // Create a public Open VSX namespace if needed.
         try {
+            console.log(`Publish-extension Open VSX namespace is: ${namespace}`);
             await ovsx.createNamespace({ name: namespace });
         } catch (error) {
             console.log(`Creating Open VSX namespace failed -- assuming that it already exists`);
