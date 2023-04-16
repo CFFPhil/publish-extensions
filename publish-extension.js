@@ -207,6 +207,7 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
 
         // Create a public Open VSX namespace if needed.
         try {
+            console.log(`Publish-extension Open VSX namespace is: ${namespace}`);
             await ovsx.createNamespace({ name: namespace });
         } catch (error) {
             console.log(`Creating Open VSX namespace failed -- assuming that it already exists`);
@@ -215,6 +216,7 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
 
         console.info(`Publishing extension as ${options.targets ? options.targets.join(', ') : 'universal'}`);
         if (process.env.OVSX_PAT) {
+            console.log(`Publish-extension process.env.OVSX_PAT is: ${process.env.OVSX_PAT}`);
             await ovsx.publish(options);
             console.log(`Published ${id} to https://${registryHost}/extension/${id.split(".")[0]}/${id.split(".")[1]}`);
         } else {
