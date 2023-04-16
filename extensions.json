@@ -5,5 +5,11 @@
   },
   "tanhakabir.rest-book": {
     "repository": "https://github.com/tanhakabir/rest-book"
+  },
+  "cweijan.vscode-database-client": {
+    "repository": "https://github.com/cweijan/vscode-database-client"
+  },
+  "ansible.vscode-ansible": {
+    "repository": "https://github.com/ansible/vscode-ansible"
   }
 }
