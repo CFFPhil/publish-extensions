@@ -204,10 +204,6 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
             return;
         }
 
-        console.info(`=====>> publish-extensions options extensionFile: ${options.extensionFile}`);
-        console.info(`=====>> publish-extensions options registryUrl: ${options.registryUrl}`);
-        console.info(`=====>> publish-extensions options baseContentUrl: ${options.baseContentUrl}`);
-
         console.log(`Attempting to publish ${id} to Open VSX`);
 
         // Create a public Open VSX namespace if needed.
@@ -227,7 +223,9 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
             console.error("The OVSX_PAT environment variable was not provided, which means the extension cannot be published. Provide it or set SKIP_PUBLISH to true to avoid seeing this.");
             process.exitCode = -1;
         }
-
+        console.info(`=====>> publish-extensions options extensionFile: ${options.extensionFile}`);
+        console.info(`=====>> publish-extensions options registryUrl: ${options.registryUrl}`);
+        console.info(`=====>> publish-extensions options baseContentUrl: ${options.baseContentUrl}`);
     } catch (error) {
         if (error && String(error).indexOf('is already published.') !== -1) {
             console.log(`Could not process extension -- assuming that it already exists`);
