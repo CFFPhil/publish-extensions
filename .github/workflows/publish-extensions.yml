@@ -31,7 +31,7 @@ jobs:
       EXTENSIONS: ${{ github.event.inputs.extensions }}
       SKIP_PUBLISH: ${{ github.event.inputs.skipPublish }}
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
-      OVSX_REGISTRY_URL: ${{ registryUrl }}
+      OVSX_REGISTRY_URL: ${{ github.event.inputs.registryUrl }}
     name: Publish Extensions
     runs-on: ubuntu-latest
     steps:
