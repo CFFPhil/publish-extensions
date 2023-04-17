@@ -193,7 +193,7 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
             }
         }
 
-        console.info(`=====>> check options.extensionFile: ${options.extensionFile}, process.env.EXTENSIONS: ${options.extensionFile}`);
+        console.info(`=====>> check options.extensionFile: ${options.extensionFile}, process.env.EXTENSIONS: ${process.env.EXTENSIONS}`);
         if (options.extensionFile && process.env.EXTENSIONS) {
             console.info(`Copying file to ${artifactDirectory}`);
             const outputFile = `${extension.id}${context.target ? `@${context.target}` : ""}.vsix`

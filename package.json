@@ -41,5 +41,9 @@
   },
   "devDependencies": {
     "@types/unzipper": "^0.10.5"
+  },
+  "open-vsx": {
+    "url": "https://cloudstudioopen-openvsx-wzroc3u5ppc.ws-us94.gitpod.io",
+    "namespace": "CloudStudio"
   }
 }
