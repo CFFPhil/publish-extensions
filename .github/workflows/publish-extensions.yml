@@ -22,9 +22,8 @@ on:
         default: false
       registryUrl:
         description: "registry url"
-        type: boolean
         required: false
-        default: false
+        default: "https://3000-cloudstudioopen-openvsx-wzroc3u5ppc.ws-us94.gitpod.io/"
 
 jobs:
   publish_extensions:
