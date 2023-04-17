@@ -204,7 +204,9 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
             return;
         }
 
-        console.info(`=====>> publish-extensions options: ${options}`);
+        console.info(`=====>> publish-extensions options extensionFile: ${options.extensionFile}`);
+        console.info(`=====>> publish-extensions options registryUrl: ${options.registryUrl}`);
+        console.info(`=====>> publish-extensions options baseContentUrl: ${options.baseContentUrl}`);
 
         console.log(`Attempting to publish ${id} to Open VSX`);
 
