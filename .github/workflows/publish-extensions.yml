@@ -28,6 +28,10 @@ on:
         description: "ovsx pat"
         required: false
         default: ""
+      githubToken:
+        description: "github token"
+        required: false
+        default: ""
 
 jobs:
   publish_extensions:
@@ -37,6 +41,7 @@ jobs:
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
       OVSX_REGISTRY_URL: ${{ github.event.inputs.registryUrl }}
       OVSX_PAT: ${{ github.event.inputs.ovsxPat }}
+      GITHUB_TOKEN: ${{ github.event.inputs.githubToken }}
     name: Publish Extensions
     runs-on: ubuntu-latest
     steps:
