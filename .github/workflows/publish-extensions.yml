@@ -22,9 +22,12 @@ on:
         default: false
       registryUrl:
         description: "registry url"
-        type: boolean
         required: false
-        default: false
+        default: "https://3000-cloudstudioopen-openvsx-wzroc3u5ppc.ws-us94.gitpod.io/"
+      ovsxPat:
+        description: "ovsx pat"
+        required: false
+        default: ""
 
 jobs:
   publish_extensions:
@@ -32,7 +35,8 @@ jobs:
       EXTENSIONS: ${{ github.event.inputs.extensions }}
       SKIP_PUBLISH: ${{ github.event.inputs.skipPublish }}
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
-      OVSX_REGISTRY_URL: ${{ registryUrl }}
+      OVSX_REGISTRY_URL: ${{ github.event.inputs.registryUrl }}
+      OVSX_PAT: ${{ github.event.inputs.ovsxPat }}
     name: Publish Extensions
     runs-on: ubuntu-latest
     steps:
