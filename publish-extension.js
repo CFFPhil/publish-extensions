@@ -204,6 +204,8 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
             return;
         }
 
+        console.info(`=====>> publish-extensions options: ${options}`);
+
         console.log(`Attempting to publish ${id} to Open VSX`);
 
         // Create a public Open VSX namespace if needed.
