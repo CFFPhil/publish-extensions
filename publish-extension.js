@@ -225,7 +225,7 @@ openGalleryApi.post = (url, data, additionalHeaders) =>
         }
         console.info(`=====>> publish-extensions options extensionFile: ${options.extensionFile}`);
         console.info(`=====>> publish-extensions options registryUrl: ${options.registryUrl}`);
-        console.info(`=====>> publish-extensions options baseContentUrl: ${options.baseContentUrl}`);
+        console.info(`=====>> publish-extensions process.env.OVSX_REGISTRY_URL: ${process.env.OVSX_REGISTRY_URL}`);
     } catch (error) {
         if (error && String(error).indexOf('is already published.') !== -1) {
             console.log(`Could not process extension -- assuming that it already exists`);

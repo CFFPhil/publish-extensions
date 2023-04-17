@@ -23,7 +23,7 @@ on:
       registryUrl:
         description: "registry url"
         required: false
-        default: "https://3000-cloudstudioopen-openvsx-wzroc3u5ppc.ws-us94.gitpod.io/"
+        default: "https://3000-cloudstudioopen-openvsx-wzroc3u5ppc.ws-us94.gitpod.io"
       ovsxPat:
         description: "ovsx pat"
         required: false
