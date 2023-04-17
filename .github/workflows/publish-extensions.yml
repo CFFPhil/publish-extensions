@@ -20,6 +20,11 @@ on:
         type: boolean
         required: false
         default: false
+      registryUrl:
+        description: "registry url"
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   publish_extensions:
@@ -27,6 +32,7 @@ jobs:
       EXTENSIONS: ${{ github.event.inputs.extensions }}
       SKIP_PUBLISH: ${{ github.event.inputs.skipPublish }}
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
+      OVSX_REGISTRY_URL: ${{ registryUrl }}
     name: Publish Extensions
     runs-on: ubuntu-latest
     steps:
