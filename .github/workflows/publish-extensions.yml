@@ -23,14 +23,6 @@ on:
       registryUrl:
         description: "registry url"
         required: false
-        default: "https://3000-cloudstudioopen-openvsx-wzroc3u5ppc.ws-us94.gitpod.io"
-      ovsxPat:
-        description: "ovsx pat"
-        required: false
-        default: ""
-      githubToken:
-        description: "github token"
-        required: false
         default: ""
       registryHostOverride:
         description: "Registry Host/IP Override"
@@ -45,8 +37,6 @@ jobs:
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
       OVSX_REGISTRY_URL: ${{ github.event.inputs.registryUrl }}
       OVSX_REGISTRY_HOST_OVERRIDE: ${{ github.event.inputs.registryHostOverride }}
-      OVSX_PAT: ${{ github.event.inputs.ovsxPat }}
-      GITHUB_TOKEN: ${{ github.event.inputs.githubToken }}
     name: Publish Extensions
     runs-on: ubuntu-latest
     steps:
