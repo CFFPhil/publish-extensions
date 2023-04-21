@@ -32,6 +32,10 @@ on:
         description: "github token"
         required: false
         default: ""
+      registryHostOverride:
+        description: "Registry Host/IP Override"
+        required: false
+        default: ""
 
 jobs:
   publish_extensions:
@@ -40,6 +44,7 @@ jobs:
       SKIP_PUBLISH: ${{ github.event.inputs.skipPublish }}
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
       OVSX_REGISTRY_URL: ${{ github.event.inputs.registryUrl }}
+      OVSX_REGISTRY_HOST_OVERRIDE: ${{ github.event.inputs.registryHostOverride }}
       OVSX_PAT: ${{ github.event.inputs.ovsxPat }}
       GITHUB_TOKEN: ${{ github.event.inputs.githubToken }}
     name: Publish Extensions
@@ -56,6 +61,8 @@ jobs:
         with:
           distribution: "microsoft"
           java-version: "17"
+      - name: Update /etc/hosts
+        run: echo "$OVSX_REGISTRY_HOST_OVERRIDE" | sudo tee -a /etc/hosts
       - run: npm install
       - run: npm i -g @vscode/vsce
       - run: node publish-extensions
