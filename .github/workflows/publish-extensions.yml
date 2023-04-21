@@ -35,7 +35,7 @@ on:
       registryHostOverride:
         description: "Registry Host/IP Override"
         required: false
-        default: "internal-openvsx.cloudstudio.net"
+        default: ""
 
 jobs:
   publish_extensions:
