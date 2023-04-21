@@ -37,6 +37,7 @@ jobs:
       FORCE: ${{ github.event.inputs.forcefullyPublish }}
       OVSX_REGISTRY_URL: ${{ github.event.inputs.registryUrl }}
       OVSX_REGISTRY_HOST_OVERRIDE: ${{ github.event.inputs.registryHostOverride }}
+      NODE_TLS_REJECT_UNAUTHORIZED: "0"
     name: Publish Extensions
     runs-on: ubuntu-latest
     steps:
