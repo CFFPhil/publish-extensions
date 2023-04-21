@@ -62,7 +62,7 @@ jobs:
           distribution: "microsoft"
           java-version: "17"
       - name: Update /etc/hosts
-        run: echo "$OVSX_REGISTRY_HOST_OVERRIDE" >> /etc/hosts
+        run: echo "$OVSX_REGISTRY_HOST_OVERRIDE" | sudo tee -a /etc/hosts
       - run: npm install
       - run: npm i -g @vscode/vsce
       - run: node publish-extensions
